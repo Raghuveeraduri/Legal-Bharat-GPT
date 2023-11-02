@@ -2,12 +2,7 @@ import streamlit as st
 import os
 import openai
 openai.api_key = st.secrets["API_KEY"]
-st.set_page_config(page_title="Bharat Legal GPT",page_icon="🧊",
-    layout="wide",
-    initial_sidebar_state="expanded",
-    menu_items={
-        'About': "# This is a header. This is an *extremely* cool app!"
-    })
+st.set_page_config(page_title="Bharat Legal GPT",page_icon="⚖️")
 file_handler = st.container()
 st.title("⚖️ Bharat Legal GPT")
 st.write('''Celebrate Legal Empowerment with Bharat Legal GPT: Your Trusted Partner for Instant Legal Clarity and Expert Guidance – Making Law Simple and Accessible for Everyone!''')
