@@ -6,11 +6,11 @@ st.title("⚖️ Bharat Legal GPT")
 st.write('''Celebrate Legal Empowerment with Bharat Legal GPT: Your Trusted Partner for Instant Legal Clarity and Expert Guidance – Making Law Simple and Accessible for Everyone!''')
 st.markdown('\n')
 st.markdown('\n')
-//Refresh Button
+#Refresh Button
 with file_handler:
     if st.button("🔃 Refresh"):
         st.cache_data.clear()
-//To hide github repo
+#To hide github repo
 hide_default_format = """
        <style>
        #MainMenu {visibility: hidden; }
