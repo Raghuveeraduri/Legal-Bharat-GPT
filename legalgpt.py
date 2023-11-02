@@ -1,9 +1,7 @@
 import streamlit as st
 import os
 import openai
-import constants
-os.environ["OPENAI_API_KEY"] = constants.APIKEY
-openai.api_key = os.environ["OPENAI_API_KEY"]
+openai.api_key = st.secrets["API_KEY"]
 st.title("LEGAL BHARAT GPT")
 
 # Define conversation examples
