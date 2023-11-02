@@ -2,7 +2,10 @@ import streamlit as st
 import os
 import openai
 openai.api_key = st.secrets["API_KEY"]
-st.title("LEGAL BHARAT GPT")
+st.title("⚖️ Bharat Legal GPT")
+st.write('''Celebrate Legal Empowerment with Bharat Legal GPT: Your Trusted Partner for Instant Legal Clarity and Expert Guidance – Making Law Simple and Accessible for Everyone!''')
+st.markdown('\n')
+st.markdown('\n')
 
 # Define conversation examples
 conversations = [
