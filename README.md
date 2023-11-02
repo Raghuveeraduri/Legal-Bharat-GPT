@@ -10,8 +10,6 @@ Bharat Legal GPT is a cutting-edge AI model tailored for the legal domain, empow
 
 - **Legal Information:** Access a wealth of legal information, explanations, and references to stay informed about legal matters.
 
-- **Document Generation:** Create customized legal documents, such as contracts and agreements, quickly and efficiently.
-
 - **Expert Guidance:** Get expert guidance and advice on legal issues, although it's important to note that this should not replace consultation with a qualified attorney for complex legal matters.
 
 - **Privacy and Compliance Support:** Ensure that your business or personal affairs comply with relevant laws and regulations.
