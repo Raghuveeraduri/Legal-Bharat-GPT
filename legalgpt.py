@@ -6,7 +6,18 @@ st.title("⚖️ Bharat Legal GPT")
 st.write('''Celebrate Legal Empowerment with Bharat Legal GPT: Your Trusted Partner for Instant Legal Clarity and Expert Guidance – Making Law Simple and Accessible for Everyone!''')
 st.markdown('\n')
 st.markdown('\n')
-
+//Refresh Button
+with file_handler:
+    if st.button("🔃 Refresh"):
+        st.cache_data.clear()
+//To hide github repo
+hide_default_format = """
+       <style>
+       #MainMenu {visibility: hidden; }
+       footer {visibility: hidden;}
+       </style>
+       """
+st.markdown(hide_default_format, unsafe_allow_html=True)
 # Define conversation examples
 conversations = [
     {
