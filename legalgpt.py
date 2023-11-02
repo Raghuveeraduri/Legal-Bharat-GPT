@@ -11,13 +11,12 @@ st.markdown('\n')
 with file_handler:
     if st.button("🔃 Refresh"):
         st.cache_data.clear()
-hide_default_format = """
-       <style>
-       #MainMenu {visibility: hidden; }
-       footer {visibility: hidden;}
-       </style>
-       """
-st.markdown(hide_default_format, unsafe_allow_html=True)
+hide_github_icon = """
+#GithubIcon {
+  visibility: hidden;
+}
+"""
+st.markdown(hide_github_icon, unsafe_allow_html=True)
 # Define conversation examples
 conversations = [
     {
