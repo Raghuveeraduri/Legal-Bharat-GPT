@@ -54,7 +54,7 @@ if prompt := st.chat_input("Enter a prompt here"):
     with st.chat_message("assistant"):
         message_placeholder = st.empty()
         full_response = ""
-        for response in client.chat.completions.create(
+        for response in openai.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=conversations[-1]["messages"],
             stream=True,
