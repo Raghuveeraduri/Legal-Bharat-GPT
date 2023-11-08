@@ -1,6 +1,5 @@
 import openai
 import streamlit as st
-import os
 openai.api_key = st.secrets["API_KEY"]
 st.set_page_config(page_title="Bharat Legal GPT")
 file_handler = st.container()
