@@ -1,7 +1,7 @@
 from openai import OpenAI
 import streamlit as st
 client = OpenAI()
-openai.api_key = st.secrets["API_KEY"]
+client.api_key = st.secrets["API_KEY"]
 st.set_page_config(page_title="Bharat Legal GPT")
 file_handler = st.container()
 st.title("⚖️ Legal Bharat GPT")
