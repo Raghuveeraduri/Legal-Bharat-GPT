@@ -1,5 +1,6 @@
-import openai
+from openai import OpenAI
 import streamlit as st
+client = OpenAI()
 openai.api_key = st.secrets["API_KEY"]
 st.set_page_config(page_title="Bharat Legal GPT")
 file_handler = st.container()
@@ -54,7 +55,7 @@ if prompt := st.chat_input("Enter a prompt here"):
     with st.chat_message("assistant"):
         message_placeholder = st.empty()
         full_response = ""
-        for response in openai.ChatCompletion.create(
+        for response in client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=conversations[-1]["messages"],
             stream=True,
