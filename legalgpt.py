@@ -50,10 +50,9 @@ if prompt := st.chat_input("Enter a prompt here"):
     # Append the user's message to the conversation
     conversations[-1]["messages"].append({"role": "user", "content": prompt})
 
-
+full_response = ""
     with st.chat_message("assistant"):
         message_placeholder = st.empty()
-        full_response = ""
         for response in openai.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=conversations[-1]["messages"],
