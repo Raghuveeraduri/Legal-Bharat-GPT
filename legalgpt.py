@@ -58,9 +58,13 @@ if prompt := st.chat_input("Enter a prompt here"):
             stream=True,
         ):
             if response is not None:
-                responses = response.choices[0].delta.content
-                full_response+=""+responses
-                message_placeholder.markdown(full_response + "▌")
+                if response.choices[0].delta.content is not None:
+                    responses = response.choices[0].delta.content
+                    if responses:
+                        full_response += responses
+                        message_placeholder.markdown(full_response + "▌")
+                else:
+                    break
             else:
                 break
         message_placeholder.markdown(full_response)
