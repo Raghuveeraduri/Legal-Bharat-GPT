@@ -57,8 +57,11 @@ if prompt := st.chat_input("Enter a prompt here"):
             messages=conversations[-1]["messages"],
             stream=True,
         ):
-            full_response += response.choices[0].delta.content
-            message_placeholder.markdown(full_response + "▌")
+            if response is not None:
+                full_response += response.choices[0].delta.content
+                message_placeholder.markdown(full_response + "▌")
+            else:
+                break
         message_placeholder.markdown(full_response)
     st.session_state.messages.append({"role": "assistant", "content": full_response})
 full_response += response.choices[0].delta.content
