@@ -52,14 +52,17 @@ if prompt := st.chat_input("Enter a prompt here"):
 
 
     with st.chat_message("assistant"):
-        message_placeholder = st.empty()
-        full_response = ""
-        for response in openai.chat.completions.create(
-            model="gpt-3.5-turbo",
-            messages=conversations[-1]["messages"],
-            stream=True,
-        ):
+    message_placeholder = st.empty()
+    full_response = ""
+    for response in openai.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=conversations[-1]["messages"],
+        stream=True,
+    ):
+        if response.choices and response.choices[0].delta and response.choices[0].delta.content:
             full_response += response.choices[0].delta.content
             message_placeholder.markdown(full_response + "▌")
-        message_placeholder.markdown(full_response)
-    st.session_state.messages.append({"role": "assistant", "content": full_response})
+        else:
+            break  # Exit loop if content is None or not present
+    message_placeholder.markdown(full_response)
+st.session_state.messages.append({"role": "assistant", "content": full_response})
