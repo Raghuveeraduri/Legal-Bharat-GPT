@@ -42,15 +42,13 @@ if "messages" not in st.session_state:
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
-
+full_response = ""
 if prompt := st.chat_input("Enter a prompt here"):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
     # Append the user's message to the conversation
     conversations[-1]["messages"].append({"role": "user", "content": prompt})
-
-full_response = ""
     with st.chat_message("assistant"):
         message_placeholder = st.empty()
         for response in openai.chat.completions.create(
